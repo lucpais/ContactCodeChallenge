@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/contact_image"
+        android:layout_width="@dimen/width_image_large"
+        android:layout_height="@dimen/height_image_large"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:src="@android:drawable/ic_menu_camera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/name_title"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/contact_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/contact_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textSize="@dimen/big_text_size"
+        app:layout_constraintStart_toEndOf="@+id/name_title"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="John" />
+
+    <TextView
+        android:id="@+id/contact_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textSize="@dimen/big_text_size"
+        app:layout_constraintStart_toEndOf="@+id/contact_first_name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Doe" />
+
+    <TextView
+        android:id="@+id/phone_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/phones_title"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/contact_image"
+        app:layout_constraintTop_toBottomOf="@+id/name_title" />
+
+    <TextView
+        android:id="@+id/home_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/home_type_title"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/contact_image"
+        app:layout_constraintTop_toBottomOf="@+id/phone_title" />
+
+    <TextView
+        android:id="@+id/home_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textSize="@dimen/big_text_size"
+        app:layout_constraintStart_toEndOf="@+id/home_type"
+        app:layout_constraintTop_toBottomOf="@+id/phone_title"
+        tools:text="999999999" />
+
+    <TextView
+        android:id="@+id/cell_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/cellphone_type_title"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/contact_image"
+        app:layout_constraintTop_toBottomOf="@+id/home_type" />
+
+    <TextView
+        android:id="@+id/cell_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textSize="@dimen/big_text_size"
+        app:layout_constraintStart_toEndOf="@+id/cell_type"
+        app:layout_constraintTop_toBottomOf="@+id/home_type"
+        tools:text="999999999" />
+
+    <TextView
+        android:id="@+id/office_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/office_type_title"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/contact_image"
+        app:layout_constraintTop_toBottomOf="@+id/cell_type" />
+
+    <TextView
+        android:id="@+id/office_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textSize="@dimen/big_text_size"
+        app:layout_constraintStart_toEndOf="@+id/office_type"
+        app:layout_constraintTop_toBottomOf="@+id/cell_type"
+        tools:text="999999999" />
+
+    <TextView
+        android:id="@+id/address_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/address_title"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact_image" />
+
+    <TextView
+        android:id="@+id/home_type_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_below="@+id/contact_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/home_type_title"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_title" />
+
+    <TextView
+        android:id="@+id/home_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textSize="@dimen/big_text_size"
+        app:layout_constraintStart_toEndOf="@+id/home_type_addr"
+        app:layout_constraintTop_toBottomOf="@+id/address_title"
+        tools:text="999999999" />
+
+    <TextView
+        android:id="@+id/work_type_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_below="@+id/contact_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/work_type_title"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_type_addr" />
+
+    <TextView
+        android:id="@+id/work_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textSize="@dimen/big_text_size"
+        app:layout_constraintStart_toEndOf="@+id/work_type_addr"
+        app:layout_constraintTop_toBottomOf="@+id/home_type_addr"
+        tools:text="999999999" />
+
+
+</android.support.constraint.ConstraintLayout>

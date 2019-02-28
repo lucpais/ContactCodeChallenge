@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ContactCodeChallenge</string>
+    <string name="name_title">Name:</string>
+    <string name="phones_title">Phones:</string>
+    <string name="home_type_title">Home:</string>
+    <string name="work_type_title">Work:</string>
+    <string name="cellphone_type_title">CellPhone:</string>
+    <string name="office_type_title">Office:</string>
+    <string name="address_title">Address:</string>
+    <string name="action_search">Search</string>
+</resources>

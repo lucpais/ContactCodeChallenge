@@ -17,6 +17,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class ContactController {
@@ -100,6 +102,7 @@ public class ContactController {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+                    Collections.sort(mData);
                     mIInformationAvailableListener.refreshListViews();
                 }
             }

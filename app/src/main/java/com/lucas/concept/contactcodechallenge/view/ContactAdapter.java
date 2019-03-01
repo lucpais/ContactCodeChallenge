@@ -16,11 +16,12 @@ import com.lucas.concept.contactcodechallenge.controller.ContactController;
 import com.lucas.concept.contactcodechallenge.controller.IItemClickListener;
 import com.lucas.concept.contactcodechallenge.model.Contact;
 import com.squareup.picasso.Picasso;
+import com.volcaniccoder.volxfastscroll.IVolxAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHolder> implements Filterable {
+class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHolder> implements Filterable, IVolxAdapter<Contact> {
     private final Context mContext;
     private ArrayList<Contact> mData;
     private ArrayList<Contact> mDataFiltered;
@@ -65,6 +66,11 @@ class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHolder> i
                 notifyDataSetChanged();
             }
         };
+    }
+
+    @Override
+    public List<Contact> getList() {
+        return mDataFiltered;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

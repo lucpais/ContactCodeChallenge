@@ -15,11 +15,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.FrameLayout;
 
 import com.lucas.concept.contactcodechallenge.R;
 import com.lucas.concept.contactcodechallenge.controller.ContactController;
 import com.lucas.concept.contactcodechallenge.controller.IItemClickListener;
 import com.lucas.concept.contactcodechallenge.controller.IListInformationAvailableListener;
+import com.volcaniccoder.volxfastscroll.Volx;
 
 
 public class MainActivity extends AppCompatActivity implements IItemClickListener, IListInformationAvailableListener {
@@ -29,7 +31,9 @@ public class MainActivity extends AppCompatActivity implements IItemClickListene
     private ContactAdapter mContactAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private DividerItemDecoration mDividerItemDecoration;
-    private SearchView searchView;
+    private SearchView mSearchView;
+    private FrameLayout mParentLayout;
+    private Volx volx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements IItemClickListene
         mContactAdapter = new ContactAdapter(this);
         mContactAdapter.setClickListener(this);
         mRecyclerView.setAdapter(mContactAdapter);
+        mParentLayout = findViewById(R.id.activity_use);
+
     }
 
     @Override
@@ -64,6 +70,12 @@ public class MainActivity extends AppCompatActivity implements IItemClickListene
     @Override
     public void refreshListViews() {
         mContactAdapter.notifyDataSetChanged();
+        volx = new Volx.Builder()
+                .setUserRecyclerView(mRecyclerView)
+                .setParentLayout(mParentLayout)
+                .build();
+        volx.setInactive(false);
+        volx.notifyValueDataChanged();
     }
 
     @Override
@@ -72,14 +84,14 @@ public class MainActivity extends AppCompatActivity implements IItemClickListene
 
         // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) menu.findItem(R.id.action_search)
+        mSearchView = (SearchView) menu.findItem(R.id.action_search)
                 .getActionView();
-        searchView.setSearchableInfo(searchManager
+        mSearchView.setSearchableInfo(searchManager
                 .getSearchableInfo(getComponentName()));
-        searchView.setMaxWidth(Integer.MAX_VALUE);
+        mSearchView.setMaxWidth(Integer.MAX_VALUE);
 
         // listening to search query text change
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 // filter recycler view when query submitted
@@ -115,8 +127,8 @@ public class MainActivity extends AppCompatActivity implements IItemClickListene
     @Override
     public void onBackPressed() {
         // close search view on back button pressed
-        if (!searchView.isIconified()) {
-            searchView.setIconified(true);
+        if (!mSearchView.isIconified()) {
+            mSearchView.setIconified(true);
             return;
         }
         super.onBackPressed();

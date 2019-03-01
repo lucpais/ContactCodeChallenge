@@ -1,15 +1,18 @@
 package com.lucas.concept.contactcodechallenge.model;
 
+import com.volcaniccoder.volxfastscroll.ValueArea;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Contact implements Serializable {
+public class Contact implements Serializable, Comparable<Contact> {
 
-    private String mUid;
-    private String mBirthDate;
+    @ValueArea
     private String mFirstName;
     private String mLastName;
+    private String mUid;
+    private String mBirthDate;
     private List<PhoneInfo> mPhoneList;
     private String mHomeAddress;
     private String mWorkAddress;
@@ -81,5 +84,10 @@ public class Contact implements Serializable {
 
     public void setThumbUrl(String thumbUrl) {
         this.mThumbUrl = thumbUrl;
+    }
+
+    @Override
+    public int compareTo(Contact o) {
+        return this.getFirstName().compareTo(o.getFirstName());
     }
 }
